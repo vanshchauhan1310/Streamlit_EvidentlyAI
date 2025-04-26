@@ -1,76 +1,41 @@
-# ML monitoring dashboard with Evidently and Streamlit
+# 🚀 ML Model with Evidently - Dockerized Streamlit App
 
-This example shows how to get a [Streamlit](https://github.com/streamlit/streamlit.git) dashboard for monitoring data and model metrics with [Evidently](https://github.com/evidentlyai/evidently.git).
+## 📌 Overview
+This repository contains a **Dockerized Streamlit application** for running an ML model with **Evidently AI**. The setup ensures seamless deployment and execution of the model within a containerized environment.
 
-![Evidently dashboard with Streamlit](streamlit-app/static/preview.png "Dashboard preview")
-
-**Note**: we tested this example on macOS/Linux.
-
-You can also read the blog [Tutorial](https://www.evidentlyai.com/blog/ml-model-monitoring-dashboard-tutorial).
-
-## :woman_technologist: Installation
-
-### 1. Fork / Clone this repository
-
-Get the evidently code example:
-
-```bash
-git clone git@github.com:evidentlyai/evidently.git
-cd evidently/examples/integrations/streamlit-dashboard
+## 📂 Project Structure
+```
+📦 Docker_Practices
+├── 📂 app          # Streamlit application
+├── 📂 projects     # ML model & related files
+├── 📜 requirements.txt  # Python dependencies
+├── 📜 Dockerfile   # Docker configuration
+└── 📜 app.py       # Main Streamlit application
 ```
 
-### 2. Create virtual environment
-
-Note: 
-
-- it's recommended to use Python >= `3.9.12`
-- the streamlit version `1.19.0` doesn't work with Python `3.9.7`
-
-Create virtual environment named `.venv` and install python libraries
+## 🛠️ Setup & Installation
+### 🔹 Clone the Repository
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+ git clone https://github.com/BhavyaDhimxn/container-experiments.git
+ cd Docker_Practices
 ```
 
-
-Set up Jupyter Notebook
+### 🔹 Build & Run the Docker Container
 ```bash
-python -m ipykernel install --user --name=evidently
-jupyter contrib nbextension install --user
+ docker build -t streamlit-ml-app .
+ docker run -p 8501:8501 streamlit-ml-app
 ```
 
+## 📌 Usage
+Once the container is running, open **http://localhost:8501** in your browser to access the Streamlit ML dashboard.
 
-## :tv: Launch Monitoring Dashboards 
+## 📸 Result
+Below is the output of the Streamlit dashboard:
 
-Navigate to `streamlit-app/` directory and launch Streamlit application
-```bash
-cd streamlit-app 
-streamlit run app.py
-```
-This command launches a local Streamlit server and the Monitoring Dashboard app will open in a new tab in your default web browser. 
-
-## :arrow_forward: Generate monitoring reports with Evidently
-Examples for Bike Sharing project
-
-### 1. Run Jupyter Notebook
-
-```bash
-cd projects/bike-sharing
-jupyter notebook
-```
-
-### 2. Generate new reports 
-
-- Open notebook `bicycle_demand_monitoring.ipynb`
-- Run all cells to get predictions & generate Evidently reports
-
-Notes: 
-- All Evidently reports (`.html` files) are stored in `reports/` directory in each project
+![Result](image.png)
 
 
 
-# :books: Documentation
+---
+🌟 *Don't forget to star ⭐ the repo if you find it helpful!*
 
-- [Evidently Documentation](https://docs.evidentlyai.com) 
-- [Streamlit Documentation](https://docs.streamlit.io/library/get-started_)
